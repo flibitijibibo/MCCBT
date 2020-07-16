@@ -1,0 +1,25 @@
+This is MCCBT, the Master Chief Collection Binding Tool.
+
+Project Website: https://github.com/flibitijibibo/MCCBT/
+
+LICENSE
+-------
+MCCBT is released under the zlib license. See LICENSE for details.
+
+About MCCBT
+-----------
+MCCBT parses the input bindings from GameUserSettings.ini to be human-readable
+and writes arbitrary bindings to a new config file, bypassing Halo MCC's input
+binding rules. While this does not necessarily fix all of MCC's action set
+quirks (for example, binding Melee and Secondary Fire to a single button in
+Halo 3 still breaks dual wielding), it does at least give you a chance to try
+some bindings out in case they do happen to work by coincidence (the previous
+example mentioned doesn't work for Halo 3, but does work for Halo 2 Classic).
+
+Dependencies
+------------
+MCCBT depends solely on SDL2. MCCBT never explicitly uses the C runtime.
+
+Building MCCBT
+--------------
+Just type 'make'! You can set $CC to cross-compile.
