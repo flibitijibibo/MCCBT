@@ -41,7 +41,85 @@ static const char *INTERNAL_Games[NUM_GAMES] =
 	"UNKNOWN7"
 };
 
-static const char *INTERNAL_Actions[NUM_GAMES][NUM_ACTIONS];
+static const char *INTERNAL_Actions[NUM_GAMES][NUM_ACTIONS] =
+{
+	{ }, /* TODO: Halo 1 */
+	{ }, /* TODO: Halo 2 */
+	{ },
+	{ }, /* TODO: Halo 3 */
+	{ },
+	{
+		"Jump",
+		"Switch Grenades",
+		"Action",
+		"Reload",
+		"Change Weapon",
+		"Melee",
+		"Toggle Night Vision",
+		"Throw Grenade",
+		"Fire",
+		"Crouch",
+		"Zoom",
+		"Zoom In",
+		"Zoom Out",
+		"UNKNOWN C?",
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		"UNKNOWN Q?",
+		"Move Forward",
+		"Move Backward",
+		"Move Left",
+		"Move Right",
+		NULL,
+		NULL,
+		NULL,
+		"UNKNOWN VK_TAB?",
+		"Toggle Scoreboard",
+		NULL,
+		NULL,
+		"Vehicle Function 2",
+		"Vehicle Function 3",
+		"UNKNOWN Z?",
+		"Use Armor Ability",
+		"Vehicle Function 1",
+		"Forge Ascend",
+		"Forge Descend",
+		"Forge Grab/Release Object",
+		"Forge Boost",
+		"Forge Precision Edit",
+		"Forge Delete Object",
+		"Forge Create Object/Object Properties",
+		"Forge Tools",
+		"Forge Switch Player Mode",
+		"Forge Zoom",
+		"Forge Rotation Mode",
+		"Theater Toggle Panel",
+		"Theater Toggle Interface",
+		"Theater Toggle First/Third Person",
+		"Theater Camera Reset",
+		"Theater Jump Forward",
+		"Theater Jump Back",
+		"Theater Pause/Resume Playback",
+		"Theater Fast Forward",
+		"Theater Toggle Freecam",
+		"Theater Boost",
+		"Theater Panning",
+		"Theater Ascend",
+		"Theater Descend",
+		"UNKNOWN VK_RBUTTON?",
+		"Theater Zoom",
+		"Forge Toggle Rotation Axes",
+		"UNKNOWN C?",
+		"UNKNOWN X?",
+		"UNKNOWN VK_RBUTTON?",
+		"UNKNOWN F?",
+		"UNKNOWN 3?",
+		"UNKNOWN G?"
+	},
+	{ }
+};
 
 static const char *INTERNAL_VKCode[256] =
 {
@@ -384,8 +462,9 @@ int main(int argc, char **argv)
 			SDL_snprintf(
 				bindingsLine,
 				sizeof(bindingsLine),
-				"\t%d:",
-				j /* TODO: INTERNAL_Actions[i][j] */
+				"\t%2d, %s:",
+				j,
+				INTERNAL_Actions[i][j]
 			);
 			for (k = 0; k < NUM_BINDINGS; k += 1)
 			if (	CustomKeyboardMouseMapping[i]
