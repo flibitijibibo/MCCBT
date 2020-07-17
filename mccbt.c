@@ -666,6 +666,10 @@ int main(int argc, char **argv)
 			{
 				continue;
 			}
+			if (SDL_strstr(INTERNAL_Actions[i][j], "UNKNOWN") != NULL)
+			{
+				continue;
+			}
 			SDL_snprintf(
 				bindingsLine,
 				sizeof(bindingsLine),
