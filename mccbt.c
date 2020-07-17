@@ -43,7 +43,7 @@ static const char *INTERNAL_Games[NUM_GAMES] =
 
 static const char *INTERNAL_Actions[NUM_GAMES][NUM_ACTIONS] =
 {
-	{
+	{ /* Halo CE */
 		"Jump",
 		"Switch Grenades",
 		"Action",
@@ -114,10 +114,10 @@ static const char *INTERNAL_Actions[NUM_GAMES][NUM_ACTIONS] =
 		"UNKNOWN G?"
 	},
 	{ }, /* TODO: Halo 2 */
-	{ },
+	{ NULL },
 	{ }, /* TODO: Halo 3 */
-	{ },
-	{
+	{ NULL },
+	{ /* Halo Reach */
 		"Jump",
 		"Switch Grenades",
 		"Action",
@@ -187,7 +187,7 @@ static const char *INTERNAL_Actions[NUM_GAMES][NUM_ACTIONS] =
 		"UNKNOWN 3?",
 		"UNKNOWN G?"
 	},
-	{ }
+	{ NULL }
 };
 
 static const char *INTERNAL_VKCode[256] =
