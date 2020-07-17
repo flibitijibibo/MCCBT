@@ -682,16 +682,19 @@ int main(int argc, char **argv)
 				.GameKeyboardMouseMappings[j]
 				.VirtualKeyCodes[k] != 0	)
 			{
-				SDL_snprintf(
+				SDL_strlcat(
 					bindingsLine,
-					sizeof(bindingsLine),
-					"%s %s",
+					" ",
+					sizeof(bindingsLine)
+				);
+				SDL_strlcat(
 					bindingsLine,
 					INTERNAL_VKCode[
 						CustomKeyboardMouseMapping[i]
 						.GameKeyboardMouseMappings[j]
 						.VirtualKeyCodes[k]
-					]
+					],
+					sizeof(bindingsLine)
 				);
 			}
 			SDL_Log("%s", bindingsLine);
