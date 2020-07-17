@@ -32,12 +32,12 @@
 
 static const char *INTERNAL_Games[NUM_GAMES] =
 {
-	"UNKNOWN1",
-	"UNKNOWN2",
+	"Halo CE",
+	"Halo 2",
 	"UNKNOWN3",
-	"UNKNOWN4",
+	"Halo 3",
 	"UNKNOWN5",
-	"UNKNOWN6",
+	"Halo Reach",
 	"UNKNOWN7"
 };
 
@@ -368,6 +368,10 @@ int main(int argc, char **argv)
 	/* Print bindings to human-readable action sets */
 	for (i = 0; i < NUM_GAMES; i += 1)
 	{
+		if (SDL_strstr(INTERNAL_Games[i], "UNKNOWN") != NULL)
+		{
+			continue;
+		}
 		SDL_Log("%s:\n", INTERNAL_Games[i]);
 		for (j = 0; j < NUM_ACTIONS; j += 1)
 		{
